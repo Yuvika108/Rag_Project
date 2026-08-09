@@ -1,0 +1,44 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+ENV/
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+
+# VS Code scratch files
+tempCodeRunnerFile.py
+
+# Generated vector indexes / local databases
+vector_store/faiss-index/
+*.faiss
+*.pkl
+*.sqlite
+*.sqlite3
+
+# Logs and local runtime output
+*.log
+logs/
+tmp/
+temp/
