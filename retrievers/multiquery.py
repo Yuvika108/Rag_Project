@@ -1,7 +1,7 @@
 from langchain_core.documents import Document
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_classic.retrievers.multi_query import MultiQueryRetriever
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_classic.retrievers import MultiQueryRetriever
 from langchain_mistralai import ChatMistralAI
 from dotenv import load_dotenv
 
@@ -18,7 +18,7 @@ docs = [
 ]
 
 
-embeddings = HuggingFaceEmbeddings()
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 vectorstore = Chroma.from_documents(docs, embeddings)
 

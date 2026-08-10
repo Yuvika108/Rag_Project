@@ -32,6 +32,7 @@ tempCodeRunnerFile.py
 
 # Generated vector indexes / local databases
 vector_store/faiss-index/
+document_loaders/*.pdf
 *.faiss
 *.pkl
 *.sqlite

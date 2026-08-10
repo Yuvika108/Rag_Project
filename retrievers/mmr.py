@@ -1,6 +1,6 @@
 from langchain_core.documents import Document
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 docs = [
     Document(page_content="Gradient descent is an optimization algorithm used in machine learning."),
@@ -10,7 +10,7 @@ docs = [
     Document(page_content="Support Vector Machines are supervised learning algorithms.")
 ]
 
-embeddings = HuggingFaceEmbeddings()
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
 vectorstore = Chroma.from_documents( docs, embeddings)
 

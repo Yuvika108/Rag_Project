@@ -39,7 +39,7 @@ def summarize_with_mistral(text: str) -> str | None:
         return None
 
     try:
-        model = ChatMistralAI(model="mistral-small-2503", api_key=api_key)
+        model = ChatMistralAI(model="mistral-small-latest", api_key=api_key)
         result = model.invoke(f"Summarize the following text:\n\n{text}")
 
         if hasattr(result, "content"):
