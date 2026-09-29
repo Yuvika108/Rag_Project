@@ -7,11 +7,26 @@ from pathlib import Path
 from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
 
+from fastapi import FastAPI
+
+app = FastAPI()  # Must be named "app"
+
+@app.get("/")
+def read_root():
+  return {"message": "Hello World"}
+
+def create_app():
+  fastapi_app = FastAPI()
+  # routes and setup
+  return fastapi_app
+
+
+app = create_app()  # Expose global 'app' variable for Vercel
+
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 load_dotenv()
-
 
 def find_notes_file() -> Path:
     """Locate notes.txt in the document loaders directory."""

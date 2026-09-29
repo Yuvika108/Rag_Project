@@ -4,7 +4,6 @@ A museum-grade digital archives and retrieval-augmented research repository
 styled with the authoritative, distinguished aesthetic of Harvard University Libraries
 and the HOLLIS Digital Archives collection.
 """
-
 from __future__ import annotations
 
 import os
@@ -1526,4 +1525,4 @@ st.html(
       </p>
     </footer>
     """
-)
+) # Expose global 'app' variable for Vercel
